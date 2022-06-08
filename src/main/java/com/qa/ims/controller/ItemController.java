@@ -45,7 +45,7 @@ import com.qa.ims.utils.Utils;
 		public Item create() {
 			LOGGER.info("Please enter a item name");
 			String itemName = utils.getString();
-			LOGGER.info("Please enter a surname");
+			LOGGER.info("Please enter the item price");
 			Double price = utils.getDouble();
 			Item item = itemDAO.create(new Item(itemName, price));
 			LOGGER.info("Item created");

@@ -21,10 +21,16 @@ public class ItemDAO implements Dao<Item> {
 	@Override
 	public Item modelFromResultSet(ResultSet resultSet) throws SQLException {
 		Long itemId = resultSet.getLong("item_id");
-		String itemName = resultSet.getString("first_name");
+		String itemName = resultSet.getString("item_name");
 		Double price = resultSet.getDouble("price");
 		return new Item(itemId, itemName, price);
 	}
+	
+	/**
+	 * Reads all items from the database
+	 * 
+	 * @return A list of customers
+	 */
 
 	@Override
 	public List<Item> readAll() {
@@ -46,7 +52,7 @@ public class ItemDAO implements Dao<Item> {
 	public Item readLatest() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM items ORDER BY id DESC LIMIT 1");) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM items ORDER BY item_id DESC LIMIT 1");) {
 			resultSet.next();
 			return modelFromResultSet(resultSet);
 		} catch (Exception e) {
@@ -127,7 +133,7 @@ public class ItemDAO implements Dao<Item> {
 	@Override
 	public int delete(long itemId) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("DELETE FROM items WHERE id = ?");) {
+				PreparedStatement statement = connection.prepareStatement("DELETE FROM items WHERE item_id = ?");) {
 			statement.setLong(1, itemId);
 			return statement.executeUpdate();
 		} catch (Exception e) {

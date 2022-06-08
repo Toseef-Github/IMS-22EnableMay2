@@ -1,6 +1,6 @@
-CREATE DATABASE ims;
-
 drop schema ims;
+
+CREATE DATABASE ims;
 
 CREATE SCHEMA IF NOT EXISTS `ims`;
 
@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS `ims`.`items` (
 );
 
 CREATE TABLE IF NOT EXISTS `ims`.`orders` (
-	order_id INT(11) NOT NULL,
-    fk_id INT(11) NOT NULL AUTO_INCREMENT,
+	order_id INT(11) NOT NULL AUTO_INCREMENT,
+    fk_id INT(11) NOT NULL,
     PRIMARY KEY (order_id, fk_id),
     FOREIGN KEY (fk_id) REFERENCES customers(`id`)
     
@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `ims`.`orders` (
 
 CREATE TABLE IF NOT EXISTS `ims`.`order_items` (
 	order_item_id INT(11) NOT NULL,
+    item_quantity INT DEFAULT 1,
     fk_order_id INT(11) NOT NULL,
     fk_item_id INT(11) NOT NULL,
     PRIMARY KEY (order_item_id, fk_order_id, fk_item_id),
