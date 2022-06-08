@@ -43,7 +43,7 @@ import com.qa.ims.utils.Utils;
 		 */
 		@Override
 		public Item create() {
-			LOGGER.info("Please enter a item name");
+			LOGGER.info("Please enter an item name");
 			String itemName = utils.getString();
 			LOGGER.info("Please enter the item price");
 			Double price = utils.getDouble();
