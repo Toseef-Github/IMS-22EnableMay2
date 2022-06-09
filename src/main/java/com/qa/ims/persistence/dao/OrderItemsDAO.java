@@ -29,9 +29,7 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 	}
 
 	/**
-	* Reads all orders from the database
-	*
-	* @return A list of orders
+	* Reads all order items from the database
 	*/
 	@Override
 	public List<OrderItems> readAll() {
@@ -64,9 +62,7 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 	}
 
 	/**
-	* Creates an order in the database
-	*
-	* @param order - takes in an order object. OrderId will be ignored
+	* Creates an order items in the database
 	*/
 	@Override
 	public OrderItems create(OrderItems orderItems) {
@@ -101,11 +97,7 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 	}
 
 	/**
-	* Updates an order in the database
-	*
-	* @param order - takes in an order object, the orderId field will be used to
-	* update that order in the database
-	* @return
+	* Updates an order items in the database
 	*/
 	@Override
 	public OrderItems update(OrderItems orderItems) {
@@ -125,9 +117,7 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 	}
 
 	/**
-	* Deletes an order in the database
-	*
-	* @param orderId - id of the order
+	* Deletes an order items in the database
 	*/
 	@Override
 	public int delete(long order_Items_Id) {
