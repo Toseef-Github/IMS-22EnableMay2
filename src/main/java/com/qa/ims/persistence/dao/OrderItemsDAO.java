@@ -83,7 +83,7 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 	@Override
 	public OrderItems read(Long order_Items_Id) {
 	try (Connection connection = DBUtils.getInstance().getConnection();
-	PreparedStatement statement = connection.prepareStatement("SELECT * FROM order_Items WHERE order_Items_Id = ?");) {
+	PreparedStatement statement = connection.prepareStatement("SELECT * FROM order_Items WHERE order_Item_Id = ?");) {
 	statement.setLong(1, order_Items_Id);
 	try (ResultSet resultSet = statement.executeQuery();) {
 	resultSet.next();
@@ -103,10 +103,11 @@ public class OrderItemsDAO implements Dao<OrderItems> {
 	public OrderItems update(OrderItems orderItems) {
 	try (Connection connection = DBUtils.getInstance().getConnection();
 	PreparedStatement statement = connection
-	.prepareStatement("UPDATE order_Items SET item_Quantity = ?, fk_Order_Id = ?, fk_Item_Id = ? WHERE order_Items_Id = ?");) {
+	.prepareStatement("UPDATE order_Items SET item_Quantity = ?, fk_Order_Id = ?, fk_Item_Id = ? WHERE order_Item_Id = ?");) {
 	statement.setLong(1, orderItems.getItem_Quantity());
 	statement.setLong(2, orderItems.getFk_Order_Id());
 	statement.setLong(3, orderItems.getFk_Item_Id());
+	statement.setLong(4,  orderItems.getOrder_Item_Id());
 	statement.executeUpdate();
 	return read(orderItems.getOrder_Item_Id());
 	} catch (Exception e) {
