@@ -27,7 +27,7 @@ import com.qa.ims.utils.Utils;
 		}
 
 		/**
-		 * Reads all items to the logger
+		 * Reads all order items to the logger
 		 */
 		@Override
 		public List<OrderItems> readAll() {
@@ -39,7 +39,7 @@ import com.qa.ims.utils.Utils;
 		}
 
 		/**
-		 * Creates an item by taking in user input
+		 * Creates an order item by taking in user input
 		 */
 		@Override
 		public OrderItems create() {
@@ -50,12 +50,12 @@ import com.qa.ims.utils.Utils;
 			LOGGER.info("Please enter the item id");
 			Long fk_Item_Id = utils.getLong();
 			OrderItems item = orderItemsDAO.create(new OrderItems(item_Quantity, fk_Order_Id, fk_Item_Id));
-			LOGGER.info("Item created");
+			LOGGER.info("Order item created");
 			return item;
 		}
 
 		/**
-		 * Updates an existing item by taking in user input
+		 * not functional for this table
 		 */
 		@Override
 		public OrderItems update() {
@@ -65,7 +65,7 @@ import com.qa.ims.utils.Utils;
 		}
 
 		/**
-		 * Deletes an existing item by the id of the item
+		 * Deletes an existing order item by the id of the item
 		 * 
 		 * @return
 		 */
