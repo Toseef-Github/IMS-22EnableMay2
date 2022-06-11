@@ -1,15 +1,25 @@
 Coverage: 34%
-# IMS
 
-One Paragraph of project description goes here
+Inventory Management System
+
+This system allows you to create, read, update and delete customers, items and orders. The previous functions listed are able to be carried out via a command line interface. During this project, Java, Eclipse, Agile, MySQL, Maven, Junit and Github were all utilised to ensure a structured approach.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+In order to use this system, you must first create a local repository on your device and clone this remote repository to the local one. Once done, you should have all the files needed to be able to use the system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+GitBash – To clone the remote repository to your local repository.
+https://git-scm.com/downloads
+
+Java (Eclipse) – Eclipse is required to open the java files and access the CLI as well as to carry out testing.
+https://www.eclipse.org/downloads/packages/release/kepler/sr1/eclipse-ide-java-developers
+ 
+MySQL – To create a database which will be linked and updated through the CLI in eclipse.
+https://www.mysql.com/downloads/
+
+Maven/Junit/Mockito – Are used for testing through eclipse.
 
 ```
 Give examples
